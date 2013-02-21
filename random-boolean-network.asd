@@ -21,11 +21,13 @@
   :depends-on (:iterate
                :alexandria
                :cl-annot
+			   :fare-csv
                :anaphora
 			   :guicho-utilities)
-  :components ((:module "src"
+  :components ((:module "src" :serial t
                 :components
-                ((:file "random-boolean-network"))))
+                ((:file :random-boolean-network)
+				 (:file :csv-writer))))
   :description "a simple implementation of random boolean network."
   :long-description
   #.(with-open-file (stream (merge-pathnames

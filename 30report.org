@@ -1,0 +1,38 @@
+
+#+TITLE:     ランダムブーリアンネットワーク
+#+AUTHOR:    03110943 浅井政太郎
+#+EMAIL:     guicho2.71828@gmail.com
+#+DATE:      2013-02-21 木
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  ja
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:nil pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+#+latex_header: \usepackage{my}
+
+* はじめに
+
+Common Lisp上でランダムブーリアンネットワークを実装し、これに関して実験
+を行った。
+
+* ランダムブーリアンネットワーク(RBN)に関する実験
+
+RBNのノードは、 $k\si{bit}$ の入力から $1\si{bit}$ の出力を行う論理関数
+である。今回、 $k=2,3,4$ を想定して行うため、実装では各関数は、引数の
+$32\si{bit}$ 整数をインデックスに、配列を参照してbool値を返すように設
+計した。
+
+また、ノード数は $n=4,5,6,7$ で実験した。
+ソースは 
+
+: https://github.com/guicho271828/random-boolean-network
+
+にアップロードした。グラフの可視化にはJava製のGephi[fn:gephi]を用いる。
+
+[fn:gephi] http://oss.infoscience.co.jp/gephi/gephi.org/plugins/index.html

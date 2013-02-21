@@ -12,7 +12,6 @@
   :author "Masataro Asai"
   :license "LLGPL"
   :depends-on (:random-boolean-network
-			   :cl-csv
                :cl-test-more)
   :components ((:module "t"
                 :components

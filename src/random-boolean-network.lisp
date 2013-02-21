@@ -6,6 +6,7 @@
 (in-package :cl-user)
 (defpackage random-boolean-network
   (:use :cl :annot :annot.doc :annot.class :iterate :guicho-utilities
+		:fare-csv
 		:alexandria))
 (in-package :random-boolean-network)
 (enable-annot-syntax)
@@ -43,8 +44,25 @@
 @export-slots
 @doc "The Random-Boolean Network class."
 (defclass rbn-node ()
-  ((input-mask :type integer)
-   (array :type integer)))
+  ((input-mask :type integer :initarg :input-mask)
+   (array :type integer :initarg :array)))
+
+(defmethod initialize-instance :after ((node rbn-node)
+									   &rest args
+									   &key nodes inputs
+									   &allow-other-keys)
+  @ignore args
+  (with-slots (input-mask array) node
+	(setf input-mask (make-random-mask nodes inputs)
+		  array      (random (expt 2 nodes)))))
+
+@export
+(defun inputs (rbn-node)
+  (with-slots (input-mask) rbn-node
+	(let ((l (integer-length input-mask)))
+	  (iter (for i below l)
+			(when (logbitp i input-mask)
+			  (collect i))))))
 
 @export
 @doc "returns N rbn-node instances in an array."
@@ -94,7 +112,7 @@ propagation of states. n is a number of nodes. returns array of size =
 			(%investigate-rbn 2^n investigated nodes graph) ;;もう一度
 			(let ((new-states (propagate-all nodes states)))
 			  (setf (aref graph states) new-states)
-			  (format t "~10d ~10d ~10d ~%" investigated states new-states)
+			  ;; (format t "~10d ~10d ~10d ~%" investigated states new-states)
 			  (%investigate-rbn 2^n (1+ investigated) nodes graph))))))
 
 @export
