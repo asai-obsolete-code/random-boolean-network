@@ -1,4 +1,4 @@
-% Created 2013-02-22 金 05:58
+% Created 2013-02-22 金 06:13
 \documentclass[a4j]{jsarticle}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -60,7 +60,26 @@ $32\si{bit}$ 整数をインデックスに、配列を参照してbool値を返すように設
  https://github.com/guicho271828/random-boolean-network
 \end{verbatim}
 
-にアップロードした。グラフの可視化には、接続をcsvで出力し、Java製の
+にアップロードした。
+依存関係は以下である。ドキュメンテーションは \verb~sb-texinfo~ で生成した。
+
+\begin{itemize}
+\item Steel Bank Common Lisp \href{http://www.sbcl.org/}{http://www.sbcl.org/}
+\item quickloadable via \href{http://www.quicklisp.org/}{quicklisp}
+\begin{itemize}
+\item iterate
+\item alexandria
+\item cl-annot
+\item fare-csv
+\item anaphora
+\end{itemize}
+\item guicho-utilities
+\begin{itemize}
+\item obtain by \verb~git clone git@github.com:guicho271828/guicho-utilities.git~
+\end{itemize}
+\end{itemize}
+
+グラフの可視化には、接続をcsvで出力し、Java製の
 Cytoscape\footnote{http://www.cytoscape.org/
  }を用いて可視化した。
 \section{可視化結果}
