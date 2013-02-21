@@ -1,0 +1,5 @@
+@findex make-random-mask
+@anchor{Function make-random-mask}
+@deffn {Function} {make-random-mask} n k
+returns an (integer 0 n) which has only @code{k} bits @code{on}.
+@end deffn

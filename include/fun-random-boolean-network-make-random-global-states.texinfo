@@ -1,0 +1,5 @@
+@findex make-random-global-states
+@anchor{Function make-random-global-states}
+@deffn {Function} {make-random-global-states} 2^n
+returns an (integer 0 n) which is randomized for the initial state.
+@end deffn

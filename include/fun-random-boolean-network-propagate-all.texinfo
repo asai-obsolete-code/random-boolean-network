@@ -1,0 +1,5 @@
+@findex propagate-all
+@anchor{Function propagate-all}
+@deffn {Function} {propagate-all} nodes states
+propagates all nodes and return a global state in the form of integer (bit-vector).
+@end deffn

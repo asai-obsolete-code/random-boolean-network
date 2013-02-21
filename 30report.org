@@ -1,5 +1,5 @@
 
-#+TITLE:     ランダムブーリアンネットワーク
+#+TITLE:     問題番号 30 report
 #+AUTHOR:    03110943 浅井政太郎
 #+EMAIL:     guicho2.71828@gmail.com
 #+DATE:      2013-02-21 木
@@ -33,7 +33,20 @@ $32\si{bit}$ 整数をインデックスに、配列を参照してbool値を返
 
 : https://github.com/guicho271828/random-boolean-network
 
-にアップロードした。グラフの可視化には、接続をcsvで出力し、Java製の
+にアップロードした。
+依存関係は以下である。ドキュメンテーションは =sb-texinfo= で生成した。
+
++ Steel Bank Common Lisp [[http://www.sbcl.org/]]
++ quickloadable via [[http://www.quicklisp.org/][quicklisp]]
+  + iterate 
+  + alexandria
+  + cl-annot
+  + fare-csv
+  + anaphora
++ guicho-utilities
+  + obtain by =git clone git@github.com:guicho271828/guicho-utilities.git=
+
+グラフの可視化には、接続をcsvで出力し、Java製の
 Cytoscape[fn:cyto]を用いて可視化した。
 
 [fn:cyto] http://www.cytoscape.org/

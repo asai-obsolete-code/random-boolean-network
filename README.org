@@ -2,11 +2,29 @@
 
 ** Usage
 
+see =doc/= for details.
+
 ** Dependencies
+
++ Steel Bank Common Lisp [[http://www.sbcl.org/]]
++ quickloadable via [[http://www.quicklisp.org/][quicklisp]]
+  + iterate 
+  + alexandria
+  + cl-annot
+  + fare-csv
+  + anaphora
++ guicho-utilities
+  + obtain by =git clone git@github.com:guicho271828/guicho-utilities.git=
 
 ** Installation
 
+after quickloading teh libraries,
 
+#+begin_src lisp
+
+(require :random-boolean-network)
+
+#+end_src
 ** Author
 
 + Masataro Asai (guicho2.71828@gmail.com)

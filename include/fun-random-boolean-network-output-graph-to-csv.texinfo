@@ -1,0 +1,6 @@
+@findex output-graph-to-csv
+@anchor{Function output-graph-to-csv}
+@deffn {Function} {output-graph-to-csv} graph @&optional path
+output the result graph of an @code{rbn} states to the
+specified path as a csv file.
+@end deffn

@@ -1,0 +1,5 @@
+@findex print-integer-binary
+@anchor{Function print-integer-binary}
+@deffn {Function} {print-integer-binary} a
+print an integer in binary format
+@end deffn

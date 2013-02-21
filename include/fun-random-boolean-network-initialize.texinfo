@@ -1,0 +1,5 @@
+@findex initialize
+@anchor{Function initialize}
+@deffn {Function} {initialize} n class @&rest args
+returns @code{n} rbn-node instances in an array.
+@end deffn

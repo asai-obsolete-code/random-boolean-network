@@ -1,0 +1,5 @@
+@findex propagate
+@anchor{Function propagate}
+@deffn {Function} {propagate} node states
+propagates each node. Uses global set of states as its input.
+@end deffn

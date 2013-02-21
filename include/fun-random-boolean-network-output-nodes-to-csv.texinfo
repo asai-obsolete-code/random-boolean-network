@@ -1,0 +1,6 @@
+@findex output-nodes-to-csv
+@anchor{Function output-nodes-to-csv}
+@deffn {Function} {output-nodes-to-csv} nodes @&optional path
+output the node connection of an @code{rbn} to the specified
+path as a csv file.
+@end deffn

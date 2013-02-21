@@ -1,0 +1,5 @@
+@findex investigate-rbn
+@anchor{Function investigate-rbn}
+@deffn {Function} {investigate-rbn} nodes
+creates a graph
+@end deffn

@@ -1,0 +1,7 @@
+@findex make-rbn-graph
+@anchor{Function make-rbn-graph}
+@deffn {Function} {make-rbn-graph} 2^n
+create the container of the graph which represents the
+propagation of states. n is a number of nodes. returns array of size @code{=}
+2^n .
+@end deffn

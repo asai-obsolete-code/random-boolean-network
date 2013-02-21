@@ -1,0 +1,7 @@
+@tindex rbn-node
+@anchor{Class rbn-node}
+@deftp {Class} {rbn-node}
+Class precedence list: @code{@lw{rbn-node}, @lw{standard-object}, @lw{t}}
+
+The Random-Boolean Network class.
+@end deftp
