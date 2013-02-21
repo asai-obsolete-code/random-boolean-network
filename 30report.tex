@@ -1,4 +1,4 @@
-% Created 2013-02-22 金 05:44
+% Created 2013-02-22 金 05:56
 \documentclass[a4j]{jsarticle}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -60,9 +60,9 @@ $32\si{bit}$ 整数をインデックスに、配列を参照してbool値を返すように設
  https://github.com/guicho271828/random-boolean-network
 \end{verbatim}
 
-にアップロードした。グラフの可視化にはJava製のCytoscape\footnote{http://www.cytoscape.org/
- }を用い
-た。
+にアップロードした。グラフの可視化には、接続をcsvで出力し、Java製の
+Cytoscape\footnote{http://www.cytoscape.org/
+ }を用いて可視化した。
 \section{可視化結果}
 \label{sec-3}
 
@@ -129,7 +129,7 @@ $32\si{bit}$ 整数をインデックスに、配列を参照してbool値を返すように設
 \begin{figure}[htb]
 \centering
 \includegraphics[width=.9\linewidth]{./examples/result-7-2/3.eps}
-\caption{$n=7 k=2$ 遷移図2 68,16,116でループが見られる。}
+\caption{$n=7 k=2$ 遷移図2。 68,16,116でループが見られる。}
 \end{figure}
 
 \begin{figure}[htb]
@@ -146,7 +146,7 @@ $32\si{bit}$ 整数をインデックスに、配列を参照してbool値を返すように設
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=.9\linewidth]{./examples/result-12-2/n0-circular.eps}
+\includegraphics[width=.9\linewidth]{./examples/result-12-2/0.png}
 \caption{$n=12 k=2$ 遷移図}
 \end{figure}
 
@@ -158,20 +158,20 @@ $32\si{bit}$ 整数をインデックスに、配列を参照してbool値を返すように設
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=.9\linewidth]{./examples/result-12-3/0-circular.eps}
+\includegraphics[width=.9\linewidth]{./examples/result-12-3/0.png}
 \caption{$n=12 k=3$ 遷移図}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=.9\linewidth]{./examples/result-12-4/0.eps}
+\includegraphics[width=.9\linewidth]{./examples/result-12-4/0.png}
 \caption{$n=12 k=4$ 遷移図}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=.9\linewidth]{./examples/result-12-4/n0.eps}
-\caption{$n=12 k=4$ ゲート接続図}
+\caption{$n=12 k=4$ ゲート接続図。7は入力が3つに見えるが、3と11からの線が重なっているだけである}
 \end{figure}
 
 \end{document}
