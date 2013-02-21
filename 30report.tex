@@ -1,0 +1,177 @@
+% Created 2013-02-22 金 05:44
+\documentclass[a4j]{jsarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage[nointegrals]{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage[dvipdfm]{hyperref}
+\tolerance=1000
+\usepackage{ascmac}
+\usepackage{amsmath}
+\usepackage{my}
+\usepackage{moreverb}
+\usepackage[dvipdfm]{color}
+\usepackage{listings}
+\usepackage{my}
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{ランダムブーリアンネットワーク}
+\author{03110943 浅井政太郎}
+\date{2013-02-21 木}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs Org-mode version 7.9.2}}
+
+\begin{document}
+
+\maketitle
+
+
+
+\section{はじめに}
+\label{sec-1}
+
+
+Common Lisp上でランダムブーリアンネットワークを実装し、これに関して実験
+を行った。
+\section{ランダムブーリアンネットワーク(RBN)に関する実験}
+\label{sec-2}
+
+
+RBNのノードは、 $k\si{bit}$ の入力から $1\si{bit}$ の出力を行う論理関数
+である。今回、 $k=2,3,4$ を想定して行うため、実装では各関数は、引数の
+$32\si{bit}$ 整数をインデックスに、配列を参照してbool値を返すように設
+計した。
+
+また、ノード数は $n=4,5,6,7,12$ で実験した。
+ソースは 
+
+\begin{verbatim}
+ https://github.com/guicho271828/random-boolean-network
+\end{verbatim}
+
+にアップロードした。グラフの可視化にはJava製のCytoscape\footnote{http://www.cytoscape.org/
+ }を用い
+た。
+\section{可視化結果}
+\label{sec-3}
+
+
+遷移図は、RBN全体のビット列の遷移を表している。ノードに記されている番号
+は、ビット列を整数で記したものである。一方ゲート接続図は、RBNのそれぞ
+れのノードがどこを入力として選んでいるかを示している。 \textbf{[注意]} 下部の巨
+大なグラフは、pdfで表示するのに長い時間がかかる可能性がある。
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{examples/result-4-3/1.eps}
+\caption{$n=4 k=3$ 遷移図1}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-4-3/n1.eps}
+\caption{$n=4 k=3$ ゲート接続図1}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-4-3/0.eps}
+\caption{$n=4 k=3$ 遷移図2}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-4-2/1.eps}
+\caption{$n=4 k=2$ 遷移図1}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-4-2/n1.eps}
+\caption{$n=4 k=2$ ゲート接続図1}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-4-2/0.eps}
+\caption{$n=4 k=2$ 遷移図2}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-4-2/n0.eps}
+\caption{$n=4 k=2$ ゲート接続図2}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-7-2/0.eps}
+\caption{$n=7 k=2$ 遷移図1}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-7-2/n0.eps}
+\caption{$n=7 k=2$ ゲート接続図1}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-7-2/3.eps}
+\caption{$n=7 k=2$ 遷移図2 68,16,116でループが見られる。}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-7-3/2.eps}
+\caption{$n=7 k=3$ 遷移図}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-7-3/2n.eps}
+\caption{$n=7 k=3$ ゲート接続図}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-12-2/n0-circular.eps}
+\caption{$n=12 k=2$ 遷移図}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-12-2/n0.eps}
+\caption{$n=12 k=2$ ゲート接続図}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-12-3/0-circular.eps}
+\caption{$n=12 k=3$ 遷移図}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-12-4/0.eps}
+\caption{$n=12 k=4$ 遷移図}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{./examples/result-12-4/n0.eps}
+\caption{$n=12 k=4$ ゲート接続図}
+\end{figure}
+
+\end{document}

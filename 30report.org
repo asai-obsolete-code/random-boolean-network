@@ -28,11 +28,70 @@ RBNのノードは、 $k\si{bit}$ の入力から $1\si{bit}$ の出力を行う
 $32\si{bit}$ 整数をインデックスに、配列を参照してbool値を返すように設
 計した。
 
-また、ノード数は $n=4,5,6,7$ で実験した。
+また、ノード数は $n=4,5,6,7,12$ で実験した。
 ソースは 
 
 : https://github.com/guicho271828/random-boolean-network
 
-にアップロードした。グラフの可視化にはJava製のGephi[fn:gephi]を用いる。
+にアップロードした。グラフの可視化にはJava製のCytoscape[fn:cyto]を用い
+た。
 
-[fn:gephi] http://oss.infoscience.co.jp/gephi/gephi.org/plugins/index.html
+[fn:cyto] http://www.cytoscape.org/
+
+* 可視化結果
+
+遷移図は、RBN全体のビット列の遷移を表している。ノードに記されている番号
+は、ビット列を整数で記したものである。一方ゲート接続図は、RBNのそれぞ
+れのノードがどこを入力として選んでいるかを示している。 *[注意]* 下部の巨
+大なグラフは、pdfで表示するのに長い時間がかかる可能性がある。
+
+#+caption: $n=4 k=3$ 遷移図1
+[[file:examples/result-4-3/1.eps]]
+
+#+caption: $n=4 k=3$ ゲート接続図1
+[[file:./examples/result-4-3/n1.eps]]
+
+#+caption: $n=4 k=3$ 遷移図2
+[[file:./examples/result-4-3/0.eps]]
+
+#+caption: $n=4 k=2$ 遷移図1
+[[file:./examples/result-4-2/1.eps]]
+
+#+caption: $n=4 k=2$ ゲート接続図1
+[[file:./examples/result-4-2/n1.eps]]
+
+#+caption: $n=4 k=2$ 遷移図2
+[[file:./examples/result-4-2/0.eps]]
+
+#+caption: $n=4 k=2$ ゲート接続図2
+[[file:./examples/result-4-2/n0.eps]]
+
+#+caption: $n=7 k=2$ 遷移図1
+[[file:./examples/result-7-2/0.eps]]
+
+#+caption: $n=7 k=2$ ゲート接続図1
+[[file:./examples/result-7-2/n0.eps]]
+
+#+caption: $n=7 k=2$ 遷移図2 68,16,116でループが見られる。
+[[file:./examples/result-7-2/3.eps]]
+
+#+caption: $n=7 k=3$ 遷移図
+[[file:./examples/result-7-3/2.eps]]
+
+#+caption: $n=7 k=3$ ゲート接続図
+[[file:./examples/result-7-3/2n.eps]]
+
+#+caption: $n=12 k=2$ 遷移図
+[[file:./examples/result-12-2/n0-circular.eps]]
+
+#+caption: $n=12 k=2$ ゲート接続図
+[[file:./examples/result-12-2/n0.eps]]
+
+#+caption: $n=12 k=3$ 遷移図
+[[file:./examples/result-12-3/0-circular.eps]]
+
+#+caption: $n=12 k=4$ 遷移図
+[[file:./examples/result-12-4/0.eps]]
+
+#+caption: $n=12 k=4$ ゲート接続図
+[[file:./examples/result-12-4/n0.eps]]
