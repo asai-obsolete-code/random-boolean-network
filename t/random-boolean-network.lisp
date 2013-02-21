@@ -7,11 +7,30 @@
 (defpackage random-boolean-network-test
   (:use :cl
         :random-boolean-network
-        :cl-test-more))
+		:cl-csv
+        :cl-test-more
+		:annot :annot.doc :iterate :guicho-utilities))
 (in-package :random-boolean-network-test)
+(enable-annot-syntax)
 
 (plan nil)
 
-;; blah blah blah.
+
+@doc "the number of inputs on each node"
+(defparameter *k* 3)
+@doc "the number of nodes"
+(defparameter *n* 4)
+
+; #B1010
+
+(defclass rbn-node-tester (rbn-node)
+  ((input-mask :initform (make-random-mask *n* *k*))
+   (array :initform (random (expt 2 *n*)))))
+
+(defparameter *nodes* (initialize *n* 'rbn-node-tester))
+
+(investigate-rbn *nodes*)
+
+
 
 (finalize)
